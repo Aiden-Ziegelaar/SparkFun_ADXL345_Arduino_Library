@@ -17,6 +17,7 @@ Arduino Uno
 */
 
 #include "Arduino.h"
+#include <SPI.h>
 
 #ifndef ADXL345_h
 #define ADXL345_h
@@ -229,6 +230,7 @@ private:
 	bool getRegisterBit(byte regAdress, int bitPos);  
 	byte _buff[6] ;		//	6 Bytes Buffer
 	int _CS = 10;
+	SPISettings _spiSettings;
 	bool I2C = true;
 	unsigned long SPIfreq = 5000000;
 };
